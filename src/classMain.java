@@ -24,7 +24,7 @@ public class classMain {
 //r=11437956621720228291212199612953420381679188428091051450834331532002067513477
 //t=2
 
-	static BigInteger m = new BigInteger("8884933102832021670310856601112383279454437918059397120004264665392731659049");
+	static BigInteger m = new BigInteger("8884933102832021670310856601112383279507496491807071433260928721853918699951");
 	static BigInteger a1 = new BigInteger("0");
 	static BigInteger a2 = new BigInteger("0");
 	static BigInteger a3 = new BigInteger("0");
@@ -33,10 +33,14 @@ public class classMain {
  
 	public static void main(String[] args) {
 		Courbe c = new Courbe(m,a1, a2, a3, a4, a6);
-		Point p = new Point(new BigInteger("0")
-						,new BigInteger("0"));
+		Point p = new Point(new BigInteger("7638166354848741333090176068286311479365713946232310129943505521094105356372")
+						,new BigInteger("762687367051975977761089912701686274060655281117983501949286086861823169994"));
 		
 		System.out.println(c.pointValide(p));
+		System.out.println(c.pointValide(c.add(p, p)));
+		System.out.println(c.pointValide(c.mult(p, new BigInteger("1000"))));
+		System.out.println(c.pointValide(c.opposé(p)));
+		System.out.println(c.pointValide(c.add(p, c.opposé(p))));
 		
 
 	}
